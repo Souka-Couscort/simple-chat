@@ -1,0 +1,127 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+header .container {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container h2 {
+  font-weight: bold;
+  background-color: #4caf50;
+  color: white;
+  padding: 8px;
+}
+header .container .switch-button img {
+  width: 50px;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+.chat-container {
+  width: 400px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chat-box {
+  width: 90%;
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  clear: both; /* Membersihkan float setelah chat message */
+}
+.user-input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.send-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+}
+.user-options {
+  width: 200px;
+  position: fixed;
+  top: 30px;
+  right: 300px;
+  transform: translateY(100px);
+  display: none;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px;
+  z-index: 1;
+}
+.switch-button:hover .user-options {
+  display: flex;
+  justify-content: space-around;
+}
+.switch-option {
+  cursor: pointer;
+}
+
+.switch-button .op .switch-option:hover {
+  border-bottom: 4px solid blue;
+}
+
+.you-message {
+  width: 40%;
+  border: 2px solid black;
+  background-color: #f1f1f1;
+  align-self: flex-start;
+  float: left; /* Membuat chat dari user "you" berada di sebelah kiri */
+  clear: both; /* Membersihkan float setelah chat message */
+}
+.me-message {
+  width: 40%;
+  background-color: #4caf50;
+  border: 2px solid black;
+  padding: 10px;
+  color: white;
+  align-self: flex-end; /* Mengatur posisi chat ke kanan */
+  float: right; /* Membuat chat dari user "me" berada di sebelah kanan */
+  clear: both; /* Membersihkan float setelah chat message */
+}
+
+.switch-option {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out; /* Menambahkan animasi transisi pada warna teks tombol */
+}
+
+.switch-option.active {
+  color: blue; /* Mengatur warna teks tombol aktif menjadi biru */
+  font-weight: bold;
+}
+
+.switch-option:hover {
+  color: darkgreen; /* Efek animasi hover saat mouse di atas tombol */
+  font-weight: bold;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Simple-Chat - [Souka Couscort]</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h2>Simple-Chat</h2>
+        <div class="switch-button">
+          <img src="public/hutao.jpg" alt="" />
+          <div class="user-options">
+            <div class="switch-option active" onclick="setUser('you')">
+              <img src="public/hutao.jpg" alt="" />
+              <div>You</div>
+            </div>
+            <div class="switch-option" onclick="setUser('me')">
+              <img src="public/hutao.jpg" alt="" />
+              <div>Me</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="chat-container">
+        <div class="chat-box" id="chatBox">
+          <!-- Chat messages will be displayed here -->
+        </div>
+        <input type="text" class="user-input" id="messageInput" placeholder="Type your message..." onkeydown="handleKeyDown(event)" />
+        <button class="send-button" onclick="sendMessage()">Send</button>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
