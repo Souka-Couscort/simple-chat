@@ -1,11 +1,12 @@
 ### simple_chat - [Souka Couscort]
 
 <h2>Souka couscort</h2>
-<hr>
 
-To Do:
-[ ] More styling
-[ ] When click "/" auto focus the text input.
-[ ] Make a login
-[ ] Make User setting
-[ ] Hosting
+<h3>To Do:</h3>
+<ul>
+    <li>[ ] More styling</li>
+    <li>[ ] When click "/" auto focus the text input.</li>
+    <li>[ ] Make a login</li>
+    <li>[ ] Make User setting</li>
+    <li>[ ] Hosting</li>
+</ul>
