@@ -48,6 +48,7 @@ header .container .switch-button img {
   border-radius: 5px;
   padding: 15px;
   margin-bottom: 10px;
+  border: 2px solid black;
   clear: both; /* Membersihkan float setelah chat message */
 }
 .user-input {
@@ -66,6 +67,11 @@ header .container .switch-button img {
   width: 100%;
   margin-top: 20px;
 }
+
+.send-button:hover {
+  background-color: #3f7741;
+}
+
 .user-options {
   width: 200px;
   position: fixed;
@@ -93,17 +99,15 @@ header .container .switch-button img {
 }
 
 .you-message {
-  width: 40%;
-  border: 2px solid black;
+  width: 50%;
   background-color: #f1f1f1;
   align-self: flex-start;
   float: left; /* Membuat chat dari user "you" berada di sebelah kiri */
   clear: both; /* Membersihkan float setelah chat message */
 }
 .me-message {
-  width: 40%;
+  width: 50%;
   background-color: #4caf50;
-  border: 2px solid black;
   padding: 10px;
   color: white;
   align-self: flex-end; /* Mengatur posisi chat ke kanan */
@@ -124,4 +128,62 @@ header .container .switch-button img {
 .switch-option:hover {
   color: darkgreen; /* Efek animasi hover saat mouse di atas tombol */
   font-weight: bold;
+}
+
+.timestamp-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.timestamp-container div {
+  margin-top: 5px;
+}
+.user-message {
+  /* Gaya CSS untuk kotak pesan dari pengguna (You) */
+  width: 40%;
+  background-color: #f1f1f1;
+  align-self: flex-start;
+  float: left;
+  clear: both;
+  position: relative; /* Tambahkan properti position: relative; agar posisi anaknya bisa diatur secara absolut */
+  margin-bottom: 10px; /* Tambahkan margin bawah untuk memberikan jarak antar user message */
+}
+
+.user-message > div {
+  /* Gaya CSS untuk pesan di dalam kotak pesan pengguna (You) */
+  margin-bottom: 5px;
+}
+
+.user-message > div:last-child {
+  /* Gaya CSS untuk timestamp (elemen terakhir) di dalam kotak pesan pengguna (You) */
+  position: absolute;
+  bottom: -15px; /* Atur jarak dari bagian bawah kotak pesan */
+  left: 5px; /* Atur jarak dari bagian kiri kotak pesan */
+}
+
+.username {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.timestamp {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #999;
+}
+
+.timestamp-you {
+  font-size: 12px;
+  color: #999;
+}
+
+.timestamp-me {
+  font-size: 12px;
+  color: #fff; /* Ganti warna menjadi putih untuk user "Me" */
+}
+
+/* Hanya tambahkan margin atas pada user message (You) */
+.user-message.you-message {
+  margin-top: 10px;
 }

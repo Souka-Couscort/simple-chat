@@ -13,11 +13,11 @@
         <div class="switch-button">
           <img src="public/hutao.jpg" alt="" />
           <div class="user-options">
-            <div class="switch-option active" onclick="setUser('you')">
+            <div class="switch-option active" onclick="setUser('you')" id="youButton">
               <img src="public/hutao.jpg" alt="" />
               <div>You</div>
             </div>
-            <div class="switch-option" onclick="setUser('me')">
+            <div class="switch-option" onclick="setUser('me')" id="meButton">
               <img src="public/hutao.jpg" alt="" />
               <div>Me</div>
             </div>
@@ -31,11 +31,12 @@
         <div class="chat-box" id="chatBox">
           <!-- Chat messages will be displayed here -->
         </div>
+        <div class="timestamp-container" id="timestampContainer"></div>
         <input type="text" class="user-input" id="messageInput" placeholder="Type your message..." onkeydown="handleKeyDown(event)" />
-        <button class="send-button" onclick="sendMessage()">Send</button>
+        <button class="send-button" id="btn-send" onclick="sendMessage()">Send</button>
       </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="src/script.js"></script>
   </body>
 </html>
