@@ -1,20 +1,20 @@
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
-  width: 100%;
   display: flex;
-  justify-content: center;
+  padding: 10px;
+  justify-content: space-between;
 }
 header .container {
-  width: 30%;
+  width: 100%;
   display: flex;
+  padding: 0 40px;
   justify-content: space-between;
   align-items: center;
 }
@@ -29,55 +29,11 @@ header .container .switch-button img {
   border: 2px solid black;
   border-radius: 50%;
 }
-.chat-container {
-  width: 400px;
-  margin: 0 auto;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.chat-box {
-  width: 90%;
-  height: 300px;
-  overflow-y: scroll;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 10px;
-  border: 2px solid black;
-  clear: both; /* Membersihkan float setelah chat message */
-}
-.user-input {
-  width: 90%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-.send-button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 20px;
-}
 
-.send-button:hover {
-  background-color: #3f7741;
-}
-
-.user-options {
+header .container .switch-button .user-options {
   width: 200px;
   position: fixed;
-  top: 30px;
-  right: 300px;
-  transform: translateY(100px);
+  right: 70px;
   display: none;
   background-color: #f9f9f9;
   border: 1px solid #ccc;
@@ -86,18 +42,135 @@ header .container .switch-button img {
   padding: 10px;
   z-index: 1;
 }
-.switch-button:hover .user-options {
+header .container .switch-button:hover .user-options {
   display: flex;
   justify-content: space-around;
 }
-.switch-option {
+header .container .switch-option {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out; /* Menambahkan animasi transisi pada warna teks tombol */
+}
+
+/* SETTING CLASS ACTIVE */
+header .container .switch-option.active {
+  color: blue; /* Mengatur warna teks tombol aktif menjadi biru */
+  font-weight: bold;
+}
+
+header .container .switch-option:hover {
+  color: darkgreen; /* Efek animasi hover saat mouse di atas tombol */
+  font-weight: bold;
+}
+
+header .container .switch-option.active {
+  color: blue; /* Mengatur warna teks tombol aktif menjadi biru */
+  font-weight: bold;
+}
+
+/* NAVIGASI */
+header .container nav {
+  display: flex;
+  column-gap: 40px;
+  font-weight: 600;
+}
+
+header .container nav a {
+  color: black;
+}
+
+header .container nav a:hover {
+  color: darkblue;
+}
+
+header .container nav a.active {
+  color: darkblue;
+}
+
+/* MAIN SECTION */
+main {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  height: calc(100vh - 65px);
+}
+
+main .chat-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+main .chat-container .user {
+  width: max-content;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+main .chat-container .user-action {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* CHAT BOX MENU */
+main .chat-container .chat-box {
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 20px 0px;
+  border: 2px solid black;
+  clear: both; /* Membersihkan float setelah chat message */
+}
+main .chat-container .user-action .user-input {
+  width: 70%;
+  padding: 10px;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+}
+main .chat-container .user-action .send-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-.switch-button .op .switch-option:hover {
-  border-bottom: 4px solid blue;
+main .chat-container .user-action .send-button:hover {
+  background-color: #3f7741;
 }
 
+main .chat-container .user-action .emot {
+  width: 20px;
+  border: 2px solid black;
+  border-radius: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+main .chat-container .fitur-message {
+  margin-top: 10px;
+  display: flex;
+  column-gap: 20px;
+  border: 2px solid black;
+  padding: 20px;
+}
+
+main .chat-container .fitur-message .fileUpload,
+main .chat-container .fitur-message .stikerMaker {
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* CHAT BUBBLE TEXT */
 .you-message {
   width: 50%;
   background-color: #f1f1f1;
@@ -115,30 +188,6 @@ header .container .switch-button img {
   clear: both; /* Membersihkan float setelah chat message */
 }
 
-.switch-option {
-  cursor: pointer;
-  transition: color 0.2s ease-in-out; /* Menambahkan animasi transisi pada warna teks tombol */
-}
-
-.switch-option.active {
-  color: blue; /* Mengatur warna teks tombol aktif menjadi biru */
-  font-weight: bold;
-}
-
-.switch-option:hover {
-  color: darkgreen; /* Efek animasi hover saat mouse di atas tombol */
-  font-weight: bold;
-}
-
-.timestamp-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.timestamp-container div {
-  margin-top: 5px;
-}
 .user-message {
   /* Gaya CSS untuk kotak pesan dari pengguna (You) */
   width: 40%;
@@ -148,29 +197,6 @@ header .container .switch-button img {
   clear: both;
   position: relative; /* Tambahkan properti position: relative; agar posisi anaknya bisa diatur secara absolut */
   margin-bottom: 10px; /* Tambahkan margin bawah untuk memberikan jarak antar user message */
-}
-
-.user-message > div {
-  /* Gaya CSS untuk pesan di dalam kotak pesan pengguna (You) */
-  margin-bottom: 5px;
-}
-
-.user-message > div:last-child {
-  /* Gaya CSS untuk timestamp (elemen terakhir) di dalam kotak pesan pengguna (You) */
-  position: absolute;
-  bottom: -15px; /* Atur jarak dari bagian bawah kotak pesan */
-  left: 5px; /* Atur jarak dari bagian kiri kotak pesan */
-}
-
-.username {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.timestamp {
-  margin-top: 10px;
-  font-size: 12px;
-  color: #999;
 }
 
 .timestamp-you {
@@ -183,7 +209,41 @@ header .container .switch-button img {
   color: #fff; /* Ganti warna menjadi putih untuk user "Me" */
 }
 
-/* Hanya tambahkan margin atas pada user message (You) */
-.user-message.you-message {
-  margin-top: 10px;
+/* SIDE BAR */
+main aside {
+  width: 50%;
+  padding: 20px;
+}
+
+main aside .greeting {
+  text-align: end;
+}
+
+main aside .greeting p {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: monospace;
+}
+
+main aside .current-chat {
+  margin-top: 20px;
+  border: 2px solid black;
+  display: flex;
+  padding: 10px;
+  column-gap: 10px;
+  height: 200px;
+}
+
+main aside .current-chat .notifchat,
+main aside .current-chat .chatOnline {
+  width: 50%;
+  border: 2px solid black;
+  padding: 5px;
+}
+
+main aside .allChat {
+  margin-top: 20px;
+  border: 2px solid black;
+  height: 200px;
+  padding: 10px;
 }

@@ -1,4 +1,4 @@
-let currentUser = "you"; // Default user is 'you'
+let currentUser = "me"; // Default user is 'you'
 
 function setUser(user) {
   currentUser = user;
@@ -22,17 +22,10 @@ function setUser(user) {
 function sendMessage() {
   const messageInput = document.getElementById("messageInput");
   const chatBox = document.getElementById("chatBox");
-  const timestampContainer = document.getElementById("timestampContainer");
   const message = messageInput.value.trim();
 
   if (message !== "") {
     const messageElement = document.createElement("div");
-
-    // Membuat elemen untuk menampilkan nama pengguna (You / Me)
-    const userElement = document.createElement("div");
-    userElement.textContent = `${currentUser.charAt(0).toUpperCase() + currentUser.slice(1)}`;
-    userElement.classList.add("username"); // Tambahkan kelas untuk gaya CSS
-    messageElement.appendChild(userElement);
 
     // Membuat elemen untuk menampilkan pesan
     const messageText = document.createElement("div");
@@ -46,6 +39,7 @@ function sendMessage() {
     const minutes = timestamp.getMinutes().toString().padStart(2, "0");
     timestampElement.textContent = `${hours}:${minutes}`;
     timestampElement.classList.add("timestamp"); // Tambahkan kelas untuk gaya CSS
+    timestampElement.style.textAlign = "end";
     messageElement.appendChild(timestampElement);
 
     // Tambahkan kelas "timestamp-you" atau "timestamp-me" tergantung pada user yang aktif
@@ -54,6 +48,8 @@ function sendMessage() {
     } else {
       timestampElement.classList.add("timestamp-me");
     }
+
+    // Jam
 
     messageElement.classList.add(currentUser + "-message");
     messageElement.style.borderRadius = "5px";
@@ -81,3 +77,38 @@ function handleKeyDown(event) {
     autoFocusInput();
   }
 }
+
+// GREETINGS
+
+function updateGreetingMessage() {
+  const greetingMessage = document.getElementById("greetingMessage");
+  const jamElement = document.getElementById("jam");
+
+  // Ambil waktu saat ini
+  const currentTime = new Date();
+  const jam = currentTime.getHours();
+  const menit = currentTime.getMinutes();
+
+  // Update teks waktu (misal: 10:20)
+  jamElement.textContent = `${jam.toString().padStart(2, "0")}:${menit.toString().padStart(2, "0")}`;
+
+  // Tentukan pesan selamat siang, selamat pagi, atau selamat malam berdasarkan waktu saat ini
+  if (jam >= 4 && jam < 12) {
+    greetingText = "Selamat Pagi";
+  } else if (jam >= 12 && jam < 15) {
+    greetingText = "Selamat Siang";
+  } else if (jam >= 15 && jam < 18) {
+    greetingText = "Selamat Sore";
+  } else if (jam >= 18 || jam < 4) {
+    greetingText = "Selamat Malam";
+  }
+
+  // Update teks pesan selamat siang/pagi/malam
+  greetingMessage.textContent = greetingText;
+}
+
+// Panggil fungsi untuk pertama kali
+updateGreetingMessage();
+
+// Update teks pesan selamat siang/pagi/malam setiap detik
+setInterval(updateGreetingMessage, 1000);

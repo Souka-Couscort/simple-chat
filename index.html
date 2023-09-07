@@ -10,16 +10,23 @@
     <header>
       <div class="container">
         <h2>Simple-Chat</h2>
+
+        <nav>
+          <a href="" class="chat active">Chat</a>
+          <a href="" class="group">Group Chat</a>
+          <a href="" class="status">Status</a>
+        </nav>
+
         <div class="switch-button">
           <img src="public/hutao.jpg" alt="" />
           <div class="user-options">
-            <div class="switch-option active" onclick="setUser('you')" id="youButton">
-              <img src="public/hutao.jpg" alt="" />
-              <div>You</div>
-            </div>
-            <div class="switch-option" onclick="setUser('me')" id="meButton">
+            <div class="switch-option active" onclick="setUser('me')" id="meButton">
               <img src="public/hutao.jpg" alt="" />
               <div>Me</div>
+            </div>
+            <div class="switch-option" onclick="setUser('you')" id="youButton">
+              <img src="public/hutao.jpg" alt="" />
+              <div>You</div>
             </div>
           </div>
         </div>
@@ -28,13 +35,38 @@
 
     <main>
       <div class="chat-container">
+        <div class="user">
+          <h2>Amalia Forger</h2>
+          <p>I'am Happy Now 👨</p>
+        </div>
         <div class="chat-box" id="chatBox">
           <!-- Chat messages will be displayed here -->
         </div>
-        <div class="timestamp-container" id="timestampContainer"></div>
-        <input type="text" class="user-input" id="messageInput" placeholder="Type your message..." onkeydown="handleKeyDown(event)" />
-        <button class="send-button" id="btn-send" onclick="sendMessage()">Send</button>
+        <div class="user-action">
+          <input type="text" class="user-input" id="messageInput" placeholder="Type your message..." onkeydown="handleKeyDown(event)" />
+          <div class="emot">Emot</div>
+          <button class="send-button" id="btn-send" onclick="sendMessage()">Send</button>
+        </div>
+        <div class="fitur-message">
+          <div class="fileUpload">File Upload</div>
+          <div class="stikerMaker">Stiker Maker</div>
+        </div>
       </div>
+
+      <aside>
+        <div class="greeting">
+          <h3 id="greetingMessage"></h3>
+          <p class="jam" id="jam"></p>
+        </div>
+        <hr />
+
+        <div class="current-chat">
+          <div class="notifchat">NOTIF CHAT</div>
+          <div class="chatOnline">ONLINE CHAT</div>
+        </div>
+
+        <div class="allChat">All Chat</div>
+      </aside>
     </main>
 
     <script src="src/script.js"></script>
