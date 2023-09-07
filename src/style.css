@@ -62,6 +62,11 @@ header .container .switch-option:hover {
   font-weight: bold;
 }
 
+header .container .switch-option.active {
+  color: blue; /* Mengatur warna teks tombol aktif menjadi biru */
+  font-weight: bold;
+}
+
 /* NAVIGASI */
 header .container nav {
   display: flex;
@@ -74,6 +79,10 @@ header .container nav a {
 }
 
 header .container nav a:hover {
+  color: darkblue;
+}
+
+header .container nav a.active {
   color: darkblue;
 }
 
@@ -115,7 +124,7 @@ main .chat-container .chat-box {
   clear: both; /* Membersihkan float setelah chat message */
 }
 main .chat-container .user-action .user-input {
-  width: 80%;
+  width: 70%;
   padding: 10px;
   border: 3px solid #ccc;
   border-radius: 5px;
@@ -132,6 +141,33 @@ main .chat-container .user-action .send-button {
 
 main .chat-container .user-action .send-button:hover {
   background-color: #3f7741;
+}
+
+main .chat-container .user-action .emot {
+  width: 20px;
+  border: 2px solid black;
+  border-radius: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+main .chat-container .fitur-message {
+  margin-top: 10px;
+  display: flex;
+  column-gap: 20px;
+  border: 2px solid black;
+  padding: 20px;
+}
+
+main .chat-container .fitur-message .fileUpload,
+main .chat-container .fitur-message .stikerMaker {
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 /* CHAT BUBBLE TEXT */

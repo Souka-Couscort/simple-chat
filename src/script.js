@@ -95,8 +95,10 @@ function updateGreetingMessage() {
   // Tentukan pesan selamat siang, selamat pagi, atau selamat malam berdasarkan waktu saat ini
   if (jam >= 4 && jam < 12) {
     greetingText = "Selamat Pagi";
-  } else if (jam >= 12 && jam < 18) {
+  } else if (jam >= 12 && jam < 15) {
     greetingText = "Selamat Siang";
+  } else if (jam >= 15 && jam < 18) {
+    greetingText = "Selamat Sore";
   } else if (jam >= 18 || jam < 4) {
     greetingText = "Selamat Malam";
   }
